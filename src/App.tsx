@@ -11,8 +11,9 @@ export const App: React.FC = () => {
       <main className="section is-flex is-flex-direction-column">
         <h1 className="title" data-cy="title">
           {selectedPerson
-            ? `${selectedPerson.name} (${selectedPerson.born} - ${selectedPerson.died})`
+            ? `${selectedPerson.name ?? ''} (${selectedPerson.born ?? ''} - ${selectedPerson.died ?? ''})`
             : 'No selected person'}
+          {/* The ?? operator is the nullish coalescing operator. It returns the right-hand side operand if the left-hand side operand is null or undefined, and otherwise returns the left-hand side operand. */}
         </h1>
 
         <Autocomplete
